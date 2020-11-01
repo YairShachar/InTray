@@ -1,4 +1,2 @@
 # Intray
-A capturing program
-
-A program to help capture files/text/pictures/thoughts.
+A program that captures files/text/pictures.
