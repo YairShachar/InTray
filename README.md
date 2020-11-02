@@ -9,3 +9,7 @@ A program that captures files/text/pictures.
 - Check compatibility with linux
 - Make 'report a bug'/'contact us' actually give a form to fill thats sendsa mail to relevant address.
 - Create hashtag filtering and autosuggest system
+
+## Known bugs
+
+- Clicking on open entries when the entries frame is open does nothing
