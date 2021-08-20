@@ -12,7 +12,6 @@ public class Launcher {
 	private static void setLookAndFeel() {
 		try {
 			UIManager.setLookAndFeel("javax.swing.plaf.nimbus.NimbusLookAndFeel");
-			System.out.println("Change2");
 		} catch (Exception exc) {
 			exc.printStackTrace();
 		}
