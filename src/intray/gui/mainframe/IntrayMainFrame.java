@@ -81,7 +81,7 @@ public class IntrayMainFrame extends JFrame {
 		setDefaultButton();
 		initRightClickPopupMenu();
 		setToolBarIcon();
-		setAlwaysOnTop(true);
+		setAlwaysOnTop(false);
 		setUndecorated(true);
 		pack();
 		setBackground(new Color(0, 0, 0, 0));
@@ -422,13 +422,8 @@ public class IntrayMainFrame extends JFrame {
 		return new MouseAdapter() {
 			public void mouseReleased(MouseEvent me) {
 				if (SwingUtilities.isRightMouseButton(me)) {
-					showPopup(me);
-				}
-			}
-
-			void showPopup(MouseEvent me) {
-				if (me.isPopupTrigger())
 					rightClickMenu.show(me.getComponent(), me.getX(), me.getY());
+				}
 			}
 		};
 	}
