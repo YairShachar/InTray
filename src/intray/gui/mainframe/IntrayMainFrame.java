@@ -53,7 +53,7 @@ public class IntrayMainFrame extends JFrame {
 	private IntrayPrefsDialog prefsDialog;
 	private static final String INTRAY_ICON = "/intray_icon.png";
 	private static final long serialVersionUID = 1L;
-	private static final String intrayVersion = "1.0.4";
+	private static final String intrayVersion = "1.0.0";
 	private static String workingDir = null;
 	private Preferences prefs;
 	private int coord_x = -1;
