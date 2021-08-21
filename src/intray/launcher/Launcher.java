@@ -18,11 +18,15 @@ public class Launcher {
 	}
 
 	public static void main(String[] args) {
+		
+	RunConfigurations config = new RunConfigurations();
+		
+		
 		SwingUtilities.invokeLater(new Runnable() {
 			@Override
 			public void run() {
 				setLookAndFeel();
-				new IntrayMainFrame(simulateFirstRun);
+				new IntrayMainFrame(config);
 
 			}
 
