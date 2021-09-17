@@ -41,6 +41,7 @@ import intray.gui.mainframe.panel.submitentry.IntraySubmitEntryPanel;
 import intray.gui.mainframe.panel.submitentry.IntraySubmitEntryPanel.SubmitEntryPanelComponenet;
 import intray.logic.IntrayConstants;
 import intray.logic.IntrayController;
+import intray.launcher.RunConfigurations;
 
 public class IntrayMainFrame extends JFrame {
 	private IntrayController intrayController;
@@ -53,7 +54,7 @@ public class IntrayMainFrame extends JFrame {
 	private IntrayPrefsDialog prefsDialog;
 	private static final String INTRAY_ICON = "/intray_icon.png";
 	private static final long serialVersionUID = 1L;
-	private static final String intrayVersion = "1.0.4";
+	private static final String intrayVersion = "1.0.0";
 	private static String workingDir = null;
 	private Preferences prefs;
 	private int coord_x = -1;
@@ -62,21 +63,14 @@ public class IntrayMainFrame extends JFrame {
 	private boolean isBlended;
 	private IntrayMainFrameDragger frameDraggerFromSubmitButton;
 
-	public IntrayMainFrame(boolean simulateFirstRun) {
+	public IntrayMainFrame(RunConfigurations config) {
 		super("In-Tray");
+		parseConfig(config);
 		prefsDialog = new IntrayPrefsDialog(this);
 		prefs = Preferences.userRoot().node("intray.prefs" + intrayVersion);
-		if (simulateFirstRun) {
-			prefs.put("workingDir", "");
-			prefs.putInt("coord_x", -1);
-			prefs.putInt("coord_y", -1);
-			prefs.putBoolean("isLocked", false);
-		}
 		setLayout(new FlowLayout());
 		setCloseOperation();
-		if (SystemTray.isSupported()) {
-			initTrayIcon();
-		}
+		initSystemTrayIcon();
 		initSubmitEntryPanel();
 		setDefaultButton();
 		initRightClickPopupMenu();
@@ -90,6 +84,15 @@ public class IntrayMainFrame extends JFrame {
 		initDraggable();
 		setVisible(true);
 		entryListDialog = new EntryListFrame(intrayController);
+	}
+
+	private void parseConfig(RunConfigurations config) {
+		if (config.simulateFirstRun) {
+			prefs.put("workingDir", "");
+			prefs.putInt("coord_x", -1);
+			prefs.putInt("coord_y", -1);
+			prefs.putBoolean("isLocked", false);
+		}
 	}
 
 	public void setCurrentEntriesFrame(EntryListFrame epf) {
@@ -296,24 +299,27 @@ public class IntrayMainFrame extends JFrame {
 		}
 	}
 
-	private void initTrayIcon() {
-		SystemTray tray = SystemTray.getSystemTray();
-		final URL resource = getClass().getResource(INTRAY_ICON);
-		TrayIcon icon = new TrayIcon(Toolkit.getDefaultToolkit().getImage(resource), "Intray");
-		icon.addMouseListener(new MouseAdapter() {
-			public void mouseReleased(MouseEvent arg0) {
-				if (arg0.getClickCount() == 2) {
-					forceFrameVisible();
-					IntrayMainFrame.this.setVisible(true);
+	private void initSystemTrayIcon() {
+		if (SystemTray.isSupported()) {
+			SystemTray tray = SystemTray.getSystemTray();
+			final URL resource = getClass().getResource(INTRAY_ICON);
+			TrayIcon icon = new TrayIcon(Toolkit.getDefaultToolkit().getImage(resource), "Intray");
+			icon.addMouseListener(new MouseAdapter() {
+				public void mouseReleased(MouseEvent arg0) {
+					if (arg0.getClickCount() == 2) {
+						forceFrameVisible();
+						IntrayMainFrame.this.setVisible(true);
+					}
 				}
-			}
-		});
+			});
 
-		try {
-			tray.add(icon);
-		} catch (AWTException e) {
-			e.printStackTrace();
+			try {
+				tray.add(icon);
+			} catch (AWTException e) {
+				e.printStackTrace();
+			}
 		}
+
 	}
 
 	private void forceFrameVisible() {
