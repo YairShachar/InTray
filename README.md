@@ -9,10 +9,11 @@ A program that captures files/text/pictures.
 
 ## Core Features
 * Type anything in the tray and save it as a new entry by hitting the return button or clicking the "intray" icon
-* Clipboard entries- Ctrl+V the following into the tray
-    *    snapshots/printscreens
-    *    files
-    *    text
+* Ctrl+V the following into the tray
+    *    Snapshots/printscreens
+    *    Files
+    *    Text
+* Drag and drop files in order to move them into the tray.
 * Review your entires by hitting ctrl+O or right clicking the tray and clicking "Current Entries ..."
 
 ## Todo
