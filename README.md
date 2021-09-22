@@ -10,7 +10,7 @@ A program that captures files/text/pictures.
 ## Core Features
 * Type anything in the tray and save it as a new entry by hitting the return button or clicking the "intray" icon
 * Ctrl+V the following into the tray
-    *    Snapshots/printscreens
+    *    Snapshots/Printscreens
     *    Files
     *    Text
 * Drag and drop files in order to move them into the tray.
