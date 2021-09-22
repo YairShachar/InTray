@@ -15,7 +15,7 @@ A program that captures files/text/pictures.
     *    Files
     *    Text
 * Drag and drop files in order to move them into the tray.
-* Review your entires by hitting ctrl+O or right clicking the tray and clicking "Current Entries ..."
+* Review your entries by hitting ctrl+O or right clicking the tray and clicking "Current Entries ..."
 
 ## Todo
 
