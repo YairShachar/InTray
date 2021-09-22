@@ -2,7 +2,7 @@
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
 
 A program that captures files/text/pictures.
-
+![Image of Intray](https://github.com/YairShachar/Intray/blob/master/images/intray.png)
 ## Core Features
 * Type anything in the tray and save it as a new entry by hitting the return button or clicking the "intray" icon
 * Ctrl+V the following into the tray
