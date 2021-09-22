@@ -3,10 +3,6 @@
 
 A program that captures files/text/pictures.
 
-
-
-
-
 ## Core Features
 * Type anything in the tray and save it as a new entry by hitting the return button or clicking the "intray" icon
 * Ctrl+V the following into the tray
