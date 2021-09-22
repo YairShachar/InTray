@@ -2,6 +2,11 @@
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
 
 
+
+[![Image of Intray](https://github.com/YairShachar/Intray/blob/master/images/intray.png)](#)
+
+
+
 ![Image of Intray](https://github.com/YairShachar/Intray/blob/master/images/intray.png)
 
 A program that captures files/text/pictures.
